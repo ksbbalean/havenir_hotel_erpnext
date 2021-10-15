@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "autoname": "naming_series:",
  "creation": "2020-01-29 14:39:12.726257",
  "doctype": "DocType",
@@ -137,7 +138,14 @@
    "label": "Details"
   }
  ],
- "modified": "2020-07-29 12:02:04.025076",
+ "links": [
+  {
+   "group": "HOTEL",
+   "link_doctype": "Hotel Check In",
+   "link_fieldname": "guest_id"
+  }
+ ],
+ "modified": "2021-10-16 03:32:44.741628",
  "modified_by": "Administrator",
  "module": "Havenir Hotel Erpnext",
  "name": "Hotel Guests",

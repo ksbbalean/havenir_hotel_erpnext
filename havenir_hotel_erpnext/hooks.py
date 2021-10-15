@@ -90,13 +90,17 @@ fixtures = [{
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# },
+    "Work Order": {
+        "on_update": "havenir_hotel_erpnext.events.work_order.on_update",
+    }
+
+}
 
 # Scheduled Tasks
 # ---------------
@@ -138,3 +142,6 @@ fixtures = [{
 # 	"Task": "havenir_hotel_erpnext.task.get_dashboard_data"
 # }
 
+fixtures = [
+    "Custom Field",
+]
