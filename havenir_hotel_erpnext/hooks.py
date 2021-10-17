@@ -144,4 +144,5 @@ doc_events = {
 
 fixtures = [
     "Custom Field",
+    "Workflow",
 ]
