@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2021-10-20 02:53:36.149998",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2021-10-20 02:53:36.149998",
+ "modified_by": "Administrator",
+ "module": "Havenir Hotel Erpnext",
+ "name": "hotel-statistics",
+ "owner": "Administrator",
+ "page_name": "Hotel Statistics",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Hotel Dashboard"
+}
