@@ -8,6 +8,7 @@ from frappe.model.document import Document
 
 
 class HotelCheckOut(Document):
+    @frappe.whitelist()
     def validate(self):
         room_doc = frappe.get_doc('Rooms', self.room)
         if room_doc.room_status != 'Checked In' and room_doc.check_in_id == self.check_in_id:
@@ -60,7 +61,7 @@ class HotelCheckOut(Document):
             payment_doc.contact_no = self.contact_no
             payment_doc.save()
             payment_doc.submit()
-        
+
         if self.amount_paid == 0 and self.refund > 0:
             hotel_refund_entry = frappe.new_doc('Hotel Payment Entry')
             hotel_refund_entry.company = self.company
@@ -78,21 +79,23 @@ class HotelCheckOut(Document):
 
         # Creating Sales Invoice
         create_sales_invoice(self, all_checked_out)
-        
-        
-        
 
+
+
+    @frappe.whitelist()
     def get_check_in_details(self):
         room_doc = frappe.get_doc('Rooms', self.room)
         check_in_doc = frappe.get_doc('Hotel Check In', room_doc.check_in_id)
         return [check_in_doc.name, check_in_doc.cnic, check_in_doc.guest_name, check_in_doc.check_in, check_in_doc.contact_no, check_in_doc.guest_id]
 
+    @frappe.whitelist()
     def calculate_stay_days(self):
         if frappe.utils.data.date_diff(self.check_out, self.check_in) == 0:
             return 1
         else:
             return frappe.utils.data.date_diff(self.check_out, self.check_in)
 
+    @frappe.whitelist()
     def get_items(self):
         # Getting Hotel Check In Details
         hotel_check_in = frappe.get_doc('Hotel Check In', self.check_in_id)
@@ -179,6 +182,7 @@ class HotelCheckOut(Document):
         return [stay_days, check_in_dict, food_order_list, laundry_order_list, payment_entry_list, total_food_discount, total_service_charges]
 
 
+@frappe.whitelist()
 def create_sales_invoice(self, all_checked_out):
     # Sales Invoice for Hotel Walk In Customer
     if self.customer == 'Hotel Walk In Customer':
@@ -246,7 +250,7 @@ def create_sales_invoice(self, all_checked_out):
             })
         sales_invoice_doc.insert(ignore_permissions=True)
         sales_invoice_doc.submit()
-    if all_checked_out == 1 or self.customer != 'Hotel Walk In Customer': 
+    if all_checked_out == 1 or self.customer != 'Hotel Walk In Customer':
         create_walk_in_invoice = 0
         for item in self.items:
             if item.is_pos == 1:
@@ -332,7 +336,7 @@ def create_sales_invoice(self, all_checked_out):
                 payment_doc.save()
                 payment_doc.submit()
 
-        
+
         # Getting list of check_out with same check in id and is not Hotel Walk In Customer
         check_out_list = frappe.get_list('Hotel Check Out', filters={
             'docstatus': 1,
@@ -345,7 +349,7 @@ def create_sales_invoice(self, all_checked_out):
             sales_invoice_doc = frappe.new_doc('Sales Invoice')
             company = frappe.get_doc('Company', self.company)
             sales_invoice_doc.discount_amount = 0
-            
+
             # Looping through the list
             for check_out_name in check_out_list:
                 check_out_doc = frappe.get_doc('Hotel Check Out', check_out_name)
@@ -355,7 +359,7 @@ def create_sales_invoice(self, all_checked_out):
                     sales_invoice_doc.check_in_date = frappe.get_value('Hotel Check In', self.check_in_id, 'check_in')
                     sales_invoice_doc.due_date = frappe.utils.data.today()
                     sales_invoice_doc.debit_to = company.default_receivable_account
-                
+
                 # Looping through the check out items
                 exclude_discount = 0
                 for item in check_out_doc.items:

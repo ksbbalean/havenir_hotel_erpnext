@@ -20,10 +20,20 @@ MyPage = Class.extend({
 		// grab the class
 		let me = $(this);
 		let scrtag = document.createElement('script');
+		let scrtag1 = document.createElement('script');
+		let scrtag2 = document.createElement('script');
+		let scrtag3 = document.createElement('script');
+		let scrtag4 = document.createElement('script');
 		scrtag.src = "https://www.gstatic.com/charts/loader.js"
 		scrtag.type = "text/javascript";
+		document.head.appendChild(scrtag);
+		scrtag1.src = "https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"
+		document.head.appendChild(scrtag1);
+		scrtag2.src = "https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"
+		document.head.appendChild(scrtag2);
+		scrtag3.src = "https://cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js"
+		document.head.appendChild(scrtag3);
 		// append script tage to page
-	  document.head.appendChild(scrtag);
 		// push dom elemt to page
 	// HTML CONTENT
 	let body = `
@@ -43,32 +53,43 @@ MyPage = Class.extend({
         method: "havenir_hotel_erpnext.havenir_hotel_erpnext.page.hotel_statistics.hotel_statistics.render", //dotted path to server method
         callback: function(r) {
             // code snippet
-						document.querySelector('#_content').innerHTML = r.message
+						document.querySelector('#_content').innerHTML = r.message.template
+						res = r.message;
 						// $(frappe.render_template(r.message, this)).appendTo(this.page.main);
 						// Load google charts
-						let scrtag = document.createElement('script');
-						scrtag.src = "https://www.gstatic.com/charts/loader.js"
-						scrtag.type = "text/javascript";
-						// append script tage to page
-					  document.head.appendChild(scrtag);
+						// let scrtag = document.createElement('script');
+						// scrtag.src = "https://www.gstatic.com/charts/loader.js"
+						// scrtag.type = "text/javascript";
+						// // append script tage to page
+					  // document.head.appendChild(scrtag);
 						google.charts.load('current', {'packages':['corechart']});
-						google.charts.setOnLoadCallback(drawChart);
+						google.charts.setOnLoadCallback(roomOccupancy);
 
 						// Draw the chart and set the chart values
-						function drawChart() {
+						// start room occupancy
+						function roomOccupancy() {
 						  var data = google.visualization.arrayToDataTable([
 						  ['Room', 'Occupancy'],
-							['Free', 2],
-						  ['Occupied', 8]
+							['Free', res.room_occupancy.free],
+						  ['Occupied', res.room_occupancy.occupied]
 						]);
-
 						  // Optional; add a title and set the width and height of the chart
-						  var options = {'title':'Room Occupancy', 'width':300, 'height':110};
-
+						  var options = {'title':'Room Occupancy', 'width':280, 'height':100};
 						  // Display the chart inside the <div> element with id="piechart"
 						  var chart = new google.visualization.PieChart(document.getElementById('room_occupancy'));
 						  chart.draw(data, options);
 						}
+						// end room occupancy
+
+						// INITILIAZE TABLE
+							// update hous keeping table
+							console.log(res.house_keeping)
+							document.querySelector("#housekeeping-tbody").innerHTML = res.house_keeping;
+						    var table = $('#housekeeping-table').DataTable( {
+						        fixedHeader: true,
+										"lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]]
+						    } );
+
         }
     })
 		}

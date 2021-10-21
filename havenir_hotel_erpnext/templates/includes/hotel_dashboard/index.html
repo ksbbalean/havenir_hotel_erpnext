@@ -1,10 +1,25 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.0/css/fixedHeader.bootstrap4.min.css"> -->
+
+<!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js" charset="utf-8"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js" charset="utf-8"></script> -->
+
+
+
+
+
+
+
+
 <div class="dashboard-graph"><div class="widget-group ">
 				<div class="widget-group-head">
 
 					<div class="widget-group-control"></div>
 				</div>
 				<div class="widget-group-body grid-col-3">
-          <div id="room_occupancy" class="widget         widget-shadow    number-widget-box" data-widget-name="New Loans">
+          <div id="room_occupancy" class="widget         widget-shadow    number-widget-box" data-widget-name="Room occupancy">
 			<!-- <div class="widget-head"> -->
 				<!-- <div>
 					<div class="widget-title ellipsis"><div class="number-label">Room Occupancy</div></div>
@@ -38,44 +53,15 @@
 			</div></div></div> -->
 		    <div class="widget-footer">
 		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Active Loans">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Active Loans</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">0</div>
-				<div class="card-stats grey-stat">
-				<span class="percentage-stat-area">
+		</div>
 
-					<span class="percentage-stat">
-						NaN %
-					</span>
-				</span>
-				<span class="stat-period text-muted">
-					since last month
-				</span>
-			</div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Closed Loans">
+
+
+		<div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Repayment">
 			<div class="widget-head">
 				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Closed Loans</div></div>
+					<div class="widget-title ellipsis"><div class="number-label">Reserved Rooms</div>
+					</div>
 					<div class="widget-subtitle"></div>
 				</div>
 				<div class="widget-control"><div class="card-actions dropdown pull-right">
@@ -92,7 +78,7 @@
 			</div></div>
 			</div>
 			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">0</div>
+				<div class="number" style="color:#29CD42">₱ 0.00 </div>
 				<div class="card-stats grey-stat">
 				<span class="percentage-stat-area">
 
@@ -106,44 +92,12 @@
 			</div></div></div>
 		    <div class="widget-footer">
 		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Disbursed">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Total Disbursed Amount</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">₱ 0.00 </div>
-				<div class="card-stats grey-stat">
-				<span class="percentage-stat-area">
+		</div>
 
-					<span class="percentage-stat">
-						NaN %
-					</span>
-				</span>
-				<span class="stat-period text-muted">
-					since last month
-				</span>
-			</div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Open Loan Applications">
+		<div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Repayment">
 			<div class="widget-head">
 				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Open Loan Applications</div></div>
+					<div class="widget-title ellipsis"><div class="number-label">Current Capacity</div></div>
 					<div class="widget-subtitle"></div>
 				</div>
 				<div class="widget-control"><div class="card-actions dropdown pull-right">
@@ -160,41 +114,7 @@
 			</div></div>
 			</div>
 			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">0</div>
-				<div class="card-stats grey-stat">
-				<span class="percentage-stat-area">
-
-					<span class="percentage-stat">
-						NaN %
-					</span>
-				</span>
-				<span class="stat-period text-muted">
-					since last month
-				</span>
-			</div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="New Loan Applications">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis"><div class="number-label">New Loan Applications</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">0</div>
+				<div class="number" style="color:#29CD42">₱ 0.00 </div>
 				<div class="card-stats grey-stat">
 				<span class="percentage-stat-area">
 
@@ -206,135 +126,11 @@
 					since yesterday
 				</span>
 			</div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Sanctioned Amount">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Total Sanctioned Amount</div></div>
-					<div class="widget-subtitle"></div>
+				<div class="widget-footer">
 				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">₱ 0.00 </div>
-				<div class="card-stats grey-stat">
-				<span class="percentage-stat-area">
+		</div>
 
-					<span class="percentage-stat">
-						NaN %
-					</span>
-				</span>
-				<span class="stat-period text-muted">
-					since last month
-				</span>
-			</div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Active Securities">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Active Securities</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">0</div>
-				<div class="card-stats grey-stat">
-				<span class="percentage-stat-area">
-
-					<span class="percentage-stat">
-						NaN %
-					</span>
-				</span>
-				<span class="stat-period text-muted">
-					since yesterday
-				</span>
-			</div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Applicants With Unpaid Shortfall">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Applicants With Unpaid Shortfall</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">0 </div>
-				</div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Shortfall Amount">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Total Unpaid Shortfall Amount</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">₱ 0.00 </div>
-				<div class="card-stats grey-stat">
-				<span class="percentage-stat-area">
-
-					<span class="percentage-stat">
-						NaN %
-					</span>
-				</span>
-				<span class="stat-period text-muted">
-					since yesterday
-				</span>
-			</div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Repayment">
+		<div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Repayment">
 			<div class="widget-head">
 				<div>
 					<div class="widget-title ellipsis"><div class="number-label">Total Repayment</div></div>
@@ -368,213 +164,85 @@
 			</div></div></div>
 		    <div class="widget-footer">
 		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Write Off">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Total Write Off</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:#CB2929">₱ 0.00 </div>
-				<div class="card-stats grey-stat">
-				<span class="percentage-stat-area">
+		</div>
 
-					<span class="percentage-stat">
-						NaN %
-					</span>
-				</span>
-				<span class="stat-period text-muted">
-					since yesterday
-				</span>
-			</div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div></div>
-			</div><div class="widget-group ">
+
+	</div>
+			</div>
+
+
+			<div class="widget-group ">
 				<div class="widget-group-head">
 
 					<div class="widget-group-control"></div>
 				</div>
-				<div class="widget-group-body grid-col-2"><div class="widget         widget-shadow    dashboard-widget-box" data-widget-name="4640ec4a99">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis" title="New Loans">New Loans</div>
-					<div class="widget-subtitle">Last synced <span class="frappe-timestamp " data-timestamp="2021-10-20 07:09:01.770705" title="10/20/2021 07:09">just now</span></div>
-				</div>
-				<div class="widget-control"><div class="chart-actions dropdown pull-right">
-			<button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-xs btn-secondary chart-menu">
-				<svg class="icon icon-sm">
-					<use xlink:href="#icon-dot-horizontal">
-					</use>
-				</svg>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-right">
-				<li><a class="dropdown-item" data-action="action-refresh">Refresh</a></li><li><a class="dropdown-item" data-action="action-edit">Edit</a></li><li><a class="dropdown-item" data-action="action-reset">Reset Chart</a></li><li><a class="dropdown-item" data-action="action-list">Loan List</a></li>
-			</ul>
-		</div><div class="chart-actions time-interval-filter btn-group dropdown pull-right">
-					<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<button class="btn btn-secondary btn-xs">
-			 				<svg class="icon icon-sm" style="">
-			<use class="" href="#icon-calendar"></use>
-		</svg>
-							<span class="filter-label">Daily</span>
-							<svg class="icon icon-xs" style="">
-			<use class="" href="#icon-select"></use>
-		</svg>
-						</button>
-				</a><ul class="dropdown-menu"><li><a class="dropdown-item">Yearly</a></li><li><a class="dropdown-item">Quarterly</a></li><li><a class="dropdown-item">Monthly</a></li><li><a class="dropdown-item">Weekly</a></li><li><a class="dropdown-item">Daily</a></li></ul></div><div class="chart-actions timespan-filter btn-group dropdown pull-right">
-					<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<button class="btn btn-secondary btn-xs">
+				<div class="widget-group-body grid-col-2">
 
-							<span class="filter-label">Last Month</span>
-							<svg class="icon icon-xs" style="">
-			<use class="" href="#icon-select"></use>
-		</svg>
-						</button>
-				</a><ul class="dropdown-menu"><li><a class="dropdown-item">Select Date Range</a></li><li><a class="dropdown-item">Last Year</a></li><li><a class="dropdown-item">Last Quarter</a></li><li><a class="dropdown-item">Last Month</a></li><li><a class="dropdown-item">Last Week</a></li></ul></div><div class="filter-chart btn btn-xs pull-right" data-original-title="" title="">
-				<svg class="icon icon-sm" style="">
-			<use class="" href="#icon-filter"></use>
-		</svg>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="chart-loading-state text-muted" style="height: 240px; display: none;">Loading...</div><div class="chart-loading-state text-muted" style="height: 240px; display: none;">No Data...</div><div><div class="chart-container"><div class="graph-svg-tip comparison" style="top: 0px; left: 0px; opacity: 0;"><span class="title"></span>
-				<ul class="data-point-list"></ul>
-				<div class="svg-pointer"></div></div><svg class="frappe-chart chart" width="582" height="240"><defs></defs><g class="bar-chart chart-draw-area" transform="translate(50, 30)"><g class="y axis" transform=""><g transform="translate(0, 170)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">0</text></g><g transform="translate(0, 136)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">1</text></g><g transform="translate(0, 102)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">2</text></g><g transform="translate(0, 68)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">3</text></g><g transform="translate(0, 34)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">4</text></g><g transform="translate(0, 0)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">5</text></g></g><g class="x axis" transform=""><g transform="translate(8.1, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">20-09-21</text></g><g transform="translate(24.29, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(40.48, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(56.68, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(72.87, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(89.06, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(105.26, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">26-09-21</text></g><g transform="translate(121.45, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(137.65, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(153.84, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(170.03, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(186.23, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(202.42, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">02-10-21</text></g><g transform="translate(218.61, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(234.81, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(251, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(267.19, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(283.39, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(299.58, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">08-10-21</text></g><g transform="translate(315.77, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(331.97, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(348.16, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(364.35, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(380.55, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(396.74, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">14-10-21</text></g><g transform="translate(412.94, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(429.13, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(445.32, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(461.52, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(477.71, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(493.9, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">20-10-21</text></g></g><g class="dataset-units dataset-bars dataset-0" transform=""><rect class="bar mini" style="fill: #449CF0" data-point-index="0" x="4.051612903225806" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="1" x="20.241612903225807" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="2" x="36.431612903225805" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="3" x="52.63161290322581" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="4" x="68.82161290322581" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="5" x="85.01161290322581" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="6" x="101.21161290322581" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="7" x="117.40161290322581" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="8" x="133.6016129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="9" x="149.7916129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="10" x="165.9816129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="11" x="182.18161290322578" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="12" x="198.37161290322578" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="13" x="214.5616129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="14" x="230.7616129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="15" x="246.9516129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="16" x="263.1416129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="17" x="279.3416129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="18" x="295.5316129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="19" x="311.7216129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="20" x="327.9216129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="21" x="344.1116129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="22" x="360.3016129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="23" x="376.5016129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="24" x="392.6916129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="25" x="408.8916129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="26" x="425.0816129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="27" x="441.2716129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="28" x="457.4716129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="29" x="473.6616129032258" y="170" width="8.096774193548388" height="0"></rect><rect class="bar mini" style="fill: #449CF0" data-point-index="30" x="489.85161290322577" y="170" width="8.096774193548388" height="0"></rect></g></g></svg></div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    dashboard-widget-box" data-widget-name="ddb8527881">
+		<div class="widget widget-shadow dashboard-widget-box"
+			data-widget-name="4640ec4a99">
 			<div class="widget-head">
 				<div>
-					<div class="widget-title ellipsis" title="Loan Disbursements">Loan Disbursements</div>
-					<div class="widget-subtitle">Last synced <span class="frappe-timestamp " data-timestamp="2021-10-20 07:09:00.069665" title="10/20/2021 07:09">just now</span></div>
+					<div class="widget-title ellipsis" title="House Keeping"><b class="text-primary">House Keeping</b></div>
+					<!-- <div class="widget-subtitle">Last synced <span class="frappe-timestamp " data-timestamp="2021-10-20 07:09:01.770705" title="10/20/2021 07:09">just now</span></div> -->
 				</div>
-				<div class="widget-control"><div class="chart-actions dropdown pull-right">
-			<button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-xs btn-secondary chart-menu">
-				<svg class="icon icon-sm">
-					<use xlink:href="#icon-dot-horizontal">
-					</use>
-				</svg>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-right">
-				<li><a class="dropdown-item" data-action="action-refresh">Refresh</a></li><li><a class="dropdown-item" data-action="action-edit">Edit</a></li><li><a class="dropdown-item" data-action="action-reset">Reset Chart</a></li><li><a class="dropdown-item" data-action="action-list">Loan Disbursement List</a></li>
-			</ul>
-		</div><div class="chart-actions time-interval-filter btn-group dropdown pull-right">
-					<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<button class="btn btn-secondary btn-xs">
-			 				<svg class="icon icon-sm" style="">
-			<use class="" href="#icon-calendar"></use>
-		</svg>
-							<span class="filter-label">Daily</span>
-							<svg class="icon icon-xs" style="">
-			<use class="" href="#icon-select"></use>
-		</svg>
-						</button>
-				</a><ul class="dropdown-menu"><li><a class="dropdown-item">Yearly</a></li><li><a class="dropdown-item">Quarterly</a></li><li><a class="dropdown-item">Monthly</a></li><li><a class="dropdown-item">Weekly</a></li><li><a class="dropdown-item">Daily</a></li></ul></div><div class="chart-actions timespan-filter btn-group dropdown pull-right">
-					<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<button class="btn btn-secondary btn-xs">
+			</div>
+			<div class="widget-body" id="house-keeping">
 
-							<span class="filter-label">Last Month</span>
-							<svg class="icon icon-xs" style="">
-			<use class="" href="#icon-select"></use>
-		</svg>
-						</button>
-				</a><ul class="dropdown-menu"><li><a class="dropdown-item">Select Date Range</a></li><li><a class="dropdown-item">Last Year</a></li><li><a class="dropdown-item">Last Quarter</a></li><li><a class="dropdown-item">Last Month</a></li><li><a class="dropdown-item">Last Week</a></li></ul></div><div class="filter-chart btn btn-xs pull-right" data-original-title="" title="">
-				<svg class="icon icon-sm" style="">
-			<use class="" href="#icon-filter"></use>
-		</svg>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="chart-loading-state text-muted" style="height: 240px; display: none;">Loading...</div><div class="chart-loading-state text-muted" style="height: 240px; display: none;">No Data...</div><div><div class="chart-container"><div class="graph-svg-tip comparison" style="top: 0px; left: 0px; opacity: 0;"><span class="title"></span>
-				<ul class="data-point-list"></ul>
-				<div class="svg-pointer"></div></div><svg class="frappe-chart chart" width="582" height="240"><defs></defs><g class="line-chart chart-draw-area" transform="translate(50, 30)"><g class="y axis" transform=""><g transform="translate(0, 170)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">0</text></g><g transform="translate(0, 136)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">1</text></g><g transform="translate(0, 102)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">2</text></g><g transform="translate(0, 68)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">3</text></g><g transform="translate(0, 34)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">4</text></g><g transform="translate(0, 0)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">5</text></g></g><g class="x axis" transform=""><g transform="translate(8.1, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">20-09-21</text></g><g transform="translate(24.29, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(40.48, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(56.68, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(72.87, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(89.06, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(105.26, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">26-09-21</text></g><g transform="translate(121.45, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(137.65, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(153.84, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(170.03, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(186.23, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(202.42, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">02-10-21</text></g><g transform="translate(218.61, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(234.81, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(251, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(267.19, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(283.39, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(299.58, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">08-10-21</text></g><g transform="translate(315.77, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(331.97, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(348.16, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(364.35, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(380.55, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(396.74, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">14-10-21</text></g><g transform="translate(412.94, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(429.13, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(445.32, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(461.52, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(477.71, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(493.9, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">20-10-21</text></g></g><g class="dataset-units dataset-line dataset-0" transform=""><path class="line-graph-path" d="M8.1,170L24.29,170L40.48,170L56.68,170L72.87,170L89.06,170L105.26,170L121.45,170L137.65,170L153.84,170L170.03,170L186.23,170L202.42,170L218.61,170L234.81,170L251,170L267.19,170L283.39,170L299.58,170L315.77,170L331.97,170L348.16,170L364.35,170L380.55,170L396.74,170L412.94,170L429.13,170L445.32,170L461.52,170L477.71,170L493.9,170" style="stroke: rgb(246, 131, 174); fill: none; stroke-width: 2;"></path></g></g></svg></div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    dashboard-widget-box" data-widget-name="03b3f8fc1d">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis" title="Top 10 Pledged Loan Securities">Top 10 Pledged Loan ...</div>
-					<div class="widget-subtitle">Last synced <span class="frappe-timestamp " data-timestamp="2021-10-20 07:09:03.789641" title="10/20/2021 07:09">just now</span></div>
-				</div>
-				<div class="widget-control"><div class="chart-actions dropdown pull-right">
-			<button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-xs btn-secondary chart-menu">
-				<svg class="icon icon-sm">
-					<use xlink:href="#icon-dot-horizontal">
-					</use>
-				</svg>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-right">
-				<li><a class="dropdown-item" data-action="action-refresh">Refresh</a></li><li><a class="dropdown-item" data-action="action-edit">Edit</a></li><li><a class="dropdown-item" data-action="action-reset">Reset Chart</a></li>
-			</ul>
-		</div><div class="filter-chart btn btn-xs pull-right">
-				<svg class="icon icon-sm" style="">
-			<use class="" href="#icon-filter"></use>
-		</svg>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="chart-loading-state text-muted" style="height: 240px; display: none;">Loading...</div><div class="chart-loading-state text-muted" style="height: 240px; display: none;">No Data...</div><div><div class="chart-container"><div class="graph-svg-tip comparison" style="top: 0px; left: 0px; opacity: 0;"><span class="title"></span>
-				<ul class="data-point-list"></ul>
-				<div class="svg-pointer"></div></div><svg class="frappe-chart chart" width="582" height="240"><defs></defs><g class="bar-chart chart-draw-area" transform="translate(50, 30)"><g class="y axis" transform=""></g><g class="x axis" transform=""></g><g class="dataset-units dataset-bars dataset-0" transform=""></g></g></svg></div></div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    dashboard-widget-box" data-widget-name="5613a5eb78">
-			<div class="widget-head">
-				<div>
-					<div class="widget-title ellipsis" title="Loan Interest Accrual">Loan Interest Accrua...</div>
-					<div class="widget-subtitle">Last synced <span class="frappe-timestamp " data-timestamp="2021-10-20 07:09:03.898535" title="10/20/2021 07:09">just now</span></div>
-				</div>
-				<div class="widget-control"><div class="chart-actions dropdown pull-right">
-			<button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-xs btn-secondary chart-menu">
-				<svg class="icon icon-sm">
-					<use xlink:href="#icon-dot-horizontal">
-					</use>
-				</svg>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-right">
-				<li><a class="dropdown-item" data-action="action-refresh">Refresh</a></li><li><a class="dropdown-item" data-action="action-edit">Edit</a></li><li><a class="dropdown-item" data-action="action-reset">Reset Chart</a></li><li><a class="dropdown-item" data-action="action-list">Loan Interest Accrual List</a></li>
-			</ul>
-		</div><div class="chart-actions time-interval-filter btn-group dropdown pull-right">
-					<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<button class="btn btn-secondary btn-xs">
-			 				<svg class="icon icon-sm" style="">
-			<use class="" href="#icon-calendar"></use>
-		</svg>
-							<span class="filter-label">Monthly</span>
-							<svg class="icon icon-xs" style="">
-			<use class="" href="#icon-select"></use>
-		</svg>
-						</button>
-				</a><ul class="dropdown-menu"><li><a class="dropdown-item">Yearly</a></li><li><a class="dropdown-item">Quarterly</a></li><li><a class="dropdown-item">Monthly</a></li><li><a class="dropdown-item">Weekly</a></li><li><a class="dropdown-item">Daily</a></li></ul></div><div class="chart-actions timespan-filter btn-group dropdown pull-right">
-					<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<button class="btn btn-secondary btn-xs">
+				<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+				<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+				<link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.0/css/fixedHeader.bootstrap4.min.css"> -->
 
-							<span class="filter-label">Last Year</span>
-							<svg class="icon icon-xs" style="">
-			<use class="" href="#icon-select"></use>
-		</svg>
-						</button>
-				</a><ul class="dropdown-menu"><li><a class="dropdown-item">Select Date Range</a></li><li><a class="dropdown-item">Last Year</a></li><li><a class="dropdown-item">Last Quarter</a></li><li><a class="dropdown-item">Last Month</a></li><li><a class="dropdown-item">Last Week</a></li></ul></div><div class="filter-chart btn btn-xs pull-right" data-original-title="" title="">
-				<svg class="icon icon-sm" style="">
-			<use class="" href="#icon-filter"></use>
-		</svg>
-			</div></div>
+				<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" charset="utf-8"></script>
+				<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js" charset="utf-8"></script>
+				<script src="https://cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js" charset="utf-8"></script>
+
+				<table id="housekeeping-table" class="table table-striped table-bordered" style="width:100%">
+				        <thead>
+				            <tr>
+				                <th>Room</th>
+				                <th>Team</th>
+				                <th>Status</th>
+				            </tr>
+				        </thead>
+				        <tbody id="housekeeping-tbody">
+
+				        </tbody>
+				        <tfoot>
+				            <tr>
+										<th>Room</th>
+										 <th>Team</th>
+										 <th>Status</th>
+				            </tr>
+				        </tfoot>
+				    </table>
+
+
 			</div>
-			<div class="widget-body"><div class="chart-loading-state text-muted" style="height: 240px; display: none;">Loading...</div><div class="chart-loading-state text-muted" style="height: 240px; display: none;">No Data...</div><div><div class="chart-container"><div class="graph-svg-tip comparison" style="top: 0px; left: 0px; opacity: 0;"><span class="title"></span>
-				<ul class="data-point-list"></ul>
-				<div class="svg-pointer"></div></div><svg class="frappe-chart chart" width="582" height="240"><defs></defs><g class="line-chart chart-draw-area" transform="translate(50, 30)"><g class="y axis" transform=""><g transform="translate(0, 170)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">0</text></g><g transform="translate(0, 136)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">1</text></g><g transform="translate(0, 102)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">2</text></g><g transform="translate(0, 68)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">3</text></g><g transform="translate(0, 34)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">4</text></g><g transform="translate(0, 0)" stroke-opacity="1"><line class="line-horizontal " x1="-6" x2="508" y1="0" y2="0"></line><text x="-10" y="0" dy="3px" font-size="10px" text-anchor="end">5</text></g></g><g class="x axis" transform=""><g transform="translate(19.31, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">Oct 2020</text></g><g transform="translate(57.92, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(96.54, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(135.15, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">Jan 2021</text></g><g transform="translate(173.77, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(212.38, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(251, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">Apr 2021</text></g><g transform="translate(289.62, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(328.23, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(366.85, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">Jul 2021</text></g><g transform="translate(405.46, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(444.08, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle"></text></g><g transform="translate(482.69, 0)"><line class="line-vertical " x1="0" x2="0" y1="176" y2="170"></line><text x="0" y="180" dy="10px" font-size="10px" text-anchor="middle">Oct 2021</text></g></g><g class="dataset-units dataset-line dataset-0" transform=""><path class="line-graph-path" d="M19.31,170L57.92,170L96.54,170L135.15,170L173.77,170L212.38,170L251,170L289.62,170L328.23,170L366.85,170L405.46,170L444.08,170L482.69,170" style="stroke: rgb(57, 228, 165); fill: none; stroke-width: 2;"></path></g></g></svg></div></div></div>
-		    <div class="widget-footer">
+				<div class="widget-footer">
 		    </div>
-		</div></div>
-			</div></div>
+		</div>
+
+
+		<div class="widget widget-shadow dashboard-widget-box"
+			data-widget-name="4640ec4a99">
+			<div class="widget-head">
+				<div>
+					<div class="widget-title ellipsis" title="House Keeping">House Keeping</div>
+					<!-- <div class="widget-subtitle">Last synced <span class="frappe-timestamp " data-timestamp="2021-10-20 07:09:01.770705" title="10/20/2021 07:09">just now</span></div> -->
+				</div>
+			</div>
+			<div class="widget-body" id="">
+
+
+
+
+
+			</div>
+				<div class="widget-footer">
+		    </div>
+		</div>
+
+	</div>
+			</div>
+
+		</div>
