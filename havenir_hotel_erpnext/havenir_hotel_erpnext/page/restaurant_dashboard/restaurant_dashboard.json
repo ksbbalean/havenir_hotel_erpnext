@@ -1,0 +1,26 @@
+{
+ "content": null,
+ "creation": "2021-10-24 06:09:21.149665",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2021-10-24 06:34:30.196169",
+ "modified_by": "Administrator",
+ "module": "Havenir Hotel Erpnext",
+ "name": "restaurant-dashboard",
+ "owner": "Administrator",
+ "page_name": "restaurant-dashboard",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Employee"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Restaurant Dashboard"
+}
