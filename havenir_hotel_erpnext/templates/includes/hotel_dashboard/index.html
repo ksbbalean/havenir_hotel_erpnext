@@ -60,7 +60,7 @@
 		<div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Repayment">
 			<div class="widget-head">
 				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Reserved Rooms</div>
+					<div class="widget-title ellipsis"><div class="number-label">Available Rooms</div>
 					</div>
 					<div class="widget-subtitle"></div>
 				</div>
@@ -78,16 +78,16 @@
 			</div></div>
 			</div>
 			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:#29CD42">₱ 0.00 </div>
+				<div class="number" style="color:yellow">{{available}} </div>
 				<div class="card-stats grey-stat">
 				<span class="percentage-stat-area">
 
 					<span class="percentage-stat">
-						NaN %
+						<!-- NaN % -->
 					</span>
 				</span>
 				<span class="stat-period text-muted">
-					since yesterday
+					<!-- since yesterday -->
 				</span>
 			</div></div></div>
 		    <div class="widget-footer">
@@ -97,7 +97,7 @@
 		<div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Repayment">
 			<div class="widget-head">
 				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Current Capacity</div></div>
+					<div class="widget-title ellipsis"><div class="number-label">Checked In</div></div>
 					<div class="widget-subtitle"></div>
 				</div>
 				<div class="widget-control"><div class="card-actions dropdown pull-right">
@@ -114,16 +114,16 @@
 			</div></div>
 			</div>
 			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:#29CD42">₱ 0.00 </div>
+				<div class="number" style="color:red">{{checked_in}} </div>
 				<div class="card-stats grey-stat">
 				<span class="percentage-stat-area">
 
 					<span class="percentage-stat">
-						NaN %
+						<!-- NaN % -->
 					</span>
 				</span>
 				<span class="stat-period text-muted">
-					since yesterday
+					<!-- since yesterday -->
 				</span>
 			</div></div></div>
 				<div class="widget-footer">
@@ -133,7 +133,7 @@
 		<div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Repayment">
 			<div class="widget-head">
 				<div>
-					<div class="widget-title ellipsis"><div class="number-label">Total Repayment</div></div>
+					<div class="widget-title ellipsis"><div class="number-label">Reserved/Room Service</div></div>
 					<div class="widget-subtitle"></div>
 				</div>
 				<div class="widget-control"><div class="card-actions dropdown pull-right">
@@ -150,16 +150,17 @@
 			</div></div>
 			</div>
 			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:#29CD42">₱ 0.00 </div>
+				<div class="number" style="color:blue">{{reserved}} </div> |
+				<div class="number" style="color:black">{{room_service}} </div>
 				<div class="card-stats grey-stat">
 				<span class="percentage-stat-area">
 
 					<span class="percentage-stat">
-						NaN %
+						<!-- NaN % -->
 					</span>
 				</span>
 				<span class="stat-period text-muted">
-					since yesterday
+					<!-- since yesterday -->
 				</span>
 			</div></div></div>
 		    <div class="widget-footer">
