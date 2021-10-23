@@ -55,13 +55,6 @@ MyPage = Class.extend({
             // code snippet
 						document.querySelector('#_content').innerHTML = r.message.template
 						res = r.message;
-						// $(frappe.render_template(r.message, this)).appendTo(this.page.main);
-						// Load google charts
-						// let scrtag = document.createElement('script');
-						// scrtag.src = "https://www.gstatic.com/charts/loader.js"
-						// scrtag.type = "text/javascript";
-						// // append script tage to page
-					  // document.head.appendChild(scrtag);
 						google.charts.load('current', {'packages':['corechart']});
 						google.charts.setOnLoadCallback(roomOccupancy);
 
@@ -70,9 +63,16 @@ MyPage = Class.extend({
 						function roomOccupancy() {
 						  var data = google.visualization.arrayToDataTable([
 						  ['Room', 'Occupancy'],
-							['Free', res.room_occupancy.free],
-						  ['Occupied', res.room_occupancy.occupied]
+							['Reserved', res.reserved.reserved],
+						  ['Checked In', res.checked_in.checked_in],
+							['Available', res.available.available],
+							['Room Service', res.room_service.room_service]
 						]);
+
+// 						Available
+// Checked In
+// Reserved
+// Room Service
 						  // Optional; add a title and set the width and height of the chart
 						  var options = {'title':'Room Occupancy', 'width':280, 'height':100};
 						  // Display the chart inside the <div> element with id="piechart"
