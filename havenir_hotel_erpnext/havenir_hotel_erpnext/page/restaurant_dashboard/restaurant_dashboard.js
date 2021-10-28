@@ -62,19 +62,12 @@ MyPage = Class.extend({
 						google.charts.load("current", {packages:["corechart"]});
 						google.charts.setOnLoadCallback(drawChart);
 						function drawChart() {
-							var data = google.visualization.arrayToDataTable([
-								["Element", "Sold", { role: "bar" } ],
-								["Beef Tapa", 15, ""],
-								["Turon overload", 14.8, ""],
-								["Coke Regular", 13, ""],
-								["Crispy fried Tawilis", 11, ""],
-								["EDL Caesar Sala", 10.7, ""],
-								["Moncha Frappe", 10, ""],
-								["Tortilla Nachos", 10, ""],
-								["Waffle or Pancake", 9.3, ""],
-								["Grilled Bangos", 8, ""],
-								["Large", 4, ""]
-							]);
+							let datacolumn = [["Element", "Sold", { role: "bar" } ]];
+							r.message.top_10_today.forEach((item, i) => {
+								datacolumn.push([item.item_code, item.qty, ''])
+							});
+
+							var data = google.visualization.arrayToDataTable(datacolumn);
 
 							var view = new google.visualization.DataView(data);
 							view.setColumns([0, 1,

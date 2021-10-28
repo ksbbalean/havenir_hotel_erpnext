@@ -37,3 +37,36 @@ class RestaurantTables(Document):
 			if(error):
 				frappe.throw(_(f"Seat <b>{seat.seat}</b> already assigned to table <b><a href='/app/restaurant-table/{seat_doc.table}'>{seat_doc.table}</a></b>, delete seat from the table before reasigning"))
 		self.installed_seats = seats
+
+
+	@frappe.whitelist()
+	def release_all(self):
+		released = frappe.db.sql(f"""
+			UPDATE `tabRestaurant Table Seat` r
+			SET r.party='', r.party_name='', r.status='Free'
+			WHERE r.table="{self.name}"
+		;""")
+		frappe.db.commit()
+		frappe.msgprint(_("All seats released."))
+
+	@frappe.whitelist()
+	def get_seats(self):
+		seats =  [i.name for i in frappe.db.sql(f"""
+			SELECT r.name FROM `tabRestaurant Table Seat` r
+			WHERE r.table="{self.name}" AND r.status='Occupied'
+		;""", as_dict=1)]
+
+		print(seats, '\n\n\n')
+		return seats
+
+	@frappe.whitelist()
+	def release_seat(self, seat):
+		seat = frappe.form_dict.seat or kwargs.get('seat')
+		print(seat, '\n\n')
+		frappe.db.sql(f"""
+			UPDATE `tabRestaurant Table Seat` r
+			SET r.party='', r.party_name='', r.status='Free'
+			WHERE r.name="{seat}"
+		;""")
+		frappe.db.commit()
+		return True

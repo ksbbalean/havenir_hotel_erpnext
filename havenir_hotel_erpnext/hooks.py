@@ -100,6 +100,9 @@ doc_events = {
 	# },
     "Work Order": {
         "on_update": "havenir_hotel_erpnext.events.work_order.on_update",
+    },
+    "Sales Invoice": {
+        "validate": "havenir_hotel_erpnext.events.sales_invoice.validate"
     }
 
 }
