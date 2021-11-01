@@ -66,13 +66,14 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6" style="">
+					<span class="text-center"><b><h3>Sales Count</h3></b></span>
 						<div class="table-responsive" id="sailorTableArea">
-								<span class="text-center"><b><h3>Sales Count</h3></b></span>
 							<table id="sailorTable" class="table table-striped table-bordered" width="100%">
 
 						        <thead>
 						            <tr>
 						                <th>Type</th>
+										<th>8 AM</th>
 						                <th>10 AM</th>
 						                <th>12 PM</th>
 						                <th>2 PM</th>
@@ -82,43 +83,31 @@
 						            </tr>
 						        </thead>
 						        <tbody>
-						            <tr>
-						                <td>Appetizer</td>
-						                <td>4</td>
-						                <td></td>
-						                <td>5</td>
-						                <td>8</td>
-						                <td></td>
-						                <td></td>
-						            </tr>
-												<tr>
-														<td>Gihon Gissado</td>
-														<td>4</td>
-														<td>4</td>
-														<td></td>
-														<td>8</td>
-														<td>2</td>
-														<td></td>
-												</tr>
-												<tr>
-														<td>Classic</td>
-														<td>1</td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td>2</td>
-														<td></td>
-												</tr>
+									{% for i in SALES_COUNT %}
+									<tr>
+									    <td>{{i.item_code}}</td>
+									    <td>{{i.am8}}</td>
+									    <td>{{i.am10}}</td>
+									    <td>{{i.pm12}}</td>
+									    <td>{{i.pm2}}</td>
+									    <td>{{i.pm4}}</td>
+									    <td>{{i.pm6}}</td>
+									    <td>{{i.pm8}}</td>
+									</tr>
+									{% endfor %}
 						        </tbody>
-										<thead>
+								<thead>
 						            <tr>
 						                <th>Total</th>
-						                <th>8</th>
-						                <th>8</th>
-						                <th>7</th>
-						                <th>4</th>
-						                <th>6</th>
-						                <th>8</th>
+										{% for i in SALES_COUNT_TOTAL %}
+						                <th>{{i.am8}}</th>
+										<th>{{i.am10}}</th>
+						                <th>{{i.pm12}}</th>
+						                <th>{{i.pm2}}</th>
+						                <th>{{i.pm4}}</th>
+						                <th>{{i.pm6}}</th>
+						                <th>{{i.pm8}}</th>
+										{% endfor %}
 						            </tr>
 						        </thead>
 
@@ -126,14 +115,15 @@
 						    </div>
 				</div>
 				<div class="col-md-6" style="">
+					<span class="text-center"><b><h3>Sales Volume</h3></b></span>
 						<div class="table-responsive" id="sailorTableArea">
-							<span class="text-center"><b><h3>Sales Volume</h3></b></span>
 						    <table id="sailorTable" class="table table-striped table-bordered" width="100%">
 
 						        <thead>
 						            <tr>
 						                <th>Type</th>
-						                <th>10 AM</th>
+						                <th>8 AM</th>
+										<th>10 AM</th>
 						                <th>12 PM</th>
 						                <th>2 PM</th>
 						                <th>4 PM</th>
@@ -142,43 +132,31 @@
 						            </tr>
 						        </thead>
 						        <tbody>
-						            <tr>
-						                <td>Appetizer</td>
-						                <td>4</td>
-						                <td></td>
-						                <td>5</td>
-						                <td>8</td>
-						                <td></td>
-						                <td></td>
-						            </tr>
-												<tr>
-														<td>Gihon Gissado</td>
-														<td>4</td>
-														<td>4</td>
-														<td></td>
-														<td>8</td>
-														<td>2</td>
-														<td></td>
-												</tr>
-												<tr>
-														<td>Classic</td>
-														<td>1</td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td>2</td>
-														<td></td>
-												</tr>
+									{% for i in SALES_VOLUME %}
+									<tr>
+									    <td>{{i.item_code}}</td>
+									    <td>{{frappe.format(i.am8, Currency)}}</td>
+									    <td>{{frappe.format(i.am10, Currency)}}</td>
+									    <td>{{frappe.format(i.pm12, Currency)}}</td>
+									    <td>{{frappe.format(i.pm2, Currency)}}</td>
+									    <td>{{frappe.format(i.pm4, Currency)}}</td>
+									    <td>{{frappe.format(i.pm6, Currency)}}</td>
+									    <td>{{frappe.format(i.pm8, Currency)}}</td>
+									</tr>
+									{% endfor %}
 						        </tbody>
 										<thead>
 						            <tr>
 						                <th>Total</th>
-						                <th>8</th>
-						                <th>8</th>
-						                <th>7</th>
-						                <th>4</th>
-						                <th>6</th>
-						                <th>8</th>
+										{% for i in SALES_VOLUME_TOTAL %}
+						                <th>{{i.am8}}</th>
+										<th>{{i.am10}}</th>
+						                <th>{{i.pm12}}</th>
+						                <th>{{i.pm2}}</th>
+						                <th>{{i.pm4}}</th>
+						                <th>{{i.pm6}}</th>
+						                <th>{{i.pm8}}</th>
+										{% endfor %}
 						            </tr>
 						        </thead>
 
