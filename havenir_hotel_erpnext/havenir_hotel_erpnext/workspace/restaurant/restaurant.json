@@ -1,0 +1,133 @@
+{
+ "cards_label": "Management",
+ "category": "Domains",
+ "charts": [],
+ "creation": "2021-07-31 11:44:04.572198",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 1,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Restaurant",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Invoice",
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Order",
+   "link_to": "Sales Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Entry",
+   "link_to": "Payment Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Work Order",
+   "link_to": "Work Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Page",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Restaurant Dashboard",
+   "link_to": "restaurant-dashboard",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2021-11-05 04:31:22.709058",
+ "modified_by": "Administrator",
+ "module": "Havenir Hotel Erpnext",
+ "name": "Restaurant",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "POS",
+   "link_to": "posapp",
+   "type": "Page"
+  },
+  {
+   "doc_view": "",
+   "label": "Not Started Order",
+   "link_to": "Work Order",
+   "stats_filter": "{\"status\":[\"=\",\"Not Started\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "#29CD42",
+   "doc_view": "",
+   "label": "Completed Order",
+   "link_to": "Work Order",
+   "stats_filter": "{\"status\":[\"=\",\"Completed\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "#edda09",
+   "doc_view": "",
+   "label": "In Process Order",
+   "link_to": "Work Order",
+   "stats_filter": "{\"status\":[\"=\",\"In Process\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "#e82e2e",
+   "doc_view": "",
+   "label": "Unpaid",
+   "link_to": "Sales Invoice",
+   "stats_filter": "{\"status\":[\"=\",\"Unpaid\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "#19eb0e",
+   "doc_view": "",
+   "label": "Closed",
+   "link_to": "Sales Order",
+   "stats_filter": "{\"status\":[\"=\",\"Closed\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "#ECAD4B",
+   "doc_view": "",
+   "label": "Pending",
+   "link_to": "Sales Order",
+   "stats_filter": "{\"status\":[\"!=\",\"Closed\"]}",
+   "type": "DocType"
+  }
+ ]
+}

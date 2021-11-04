@@ -3,31 +3,42 @@ from datetime import datetime
 
 
 @frappe.whitelist()
-def render():
-	checked_in = frappe.db.sql("""
+def render(**kwargs):
+	_dict = frappe.form_dict
+	from_date = _dict.from_date or str(datetime.today().date())
+	to_date = _dict.to_date or str(datetime.today().date())
+	from_date = f"{from_date} 00:00:00"
+	to_date = f"{to_date} 23:59:59"
+
+	checked_in = frappe.db.sql(f"""
 		SELECT COUNT(room_status) as checked_in
-		FROM `tabRooms` WHERE room_status='Checked In';
+		FROM `tabRooms` WHERE modified BETWEEN '{from_date}' AND '{to_date}'
+		AND room_status='Checked In'
 	;""", as_dict=1)[0].checked_in
 
-	reserved = frappe.db.sql("""
+	reserved = frappe.db.sql(f"""
 		SELECT COUNT(room_status) as reserved
-		FROM `tabRooms` WHERE room_status='Reserved';
+		FROM `tabRooms` WHERE modified BETWEEN '{from_date}' AND '{to_date}'
+		AND room_status='Reserved'
 	;""", as_dict=1)[0].reserved
 
-	available = frappe.db.sql("""
+	available = frappe.db.sql(f"""
 		SELECT COUNT(room_status) as available
-		FROM `tabRooms` WHERE room_status='Available';
+		FROM `tabRooms` WHERE modified BETWEEN '{from_date}' AND '{to_date}'
+		AND room_status='Available'
+
 	;""", as_dict=1)[0].available
 
-	room_service = frappe.db.sql("""
+	room_service = frappe.db.sql(f"""
 		SELECT COUNT(room_status) as room_service
-		FROM `tabRooms` WHERE room_status='Room Service';
+		FROM `tabRooms` WHERE modified BETWEEN '{from_date}' AND '{to_date}'
+		AND room_status='Room Service'
 	;""", as_dict=1)[0].room_service
 
 
 
-	house_keeping = frappe.db.sql("""
-		SELECT rooms, teams, status FROM `tabHousekeeping`;
+	house_keeping = frappe.db.sql(f"""
+		SELECT rooms, teams, status FROM `tabHousekeeping`
 	;""", as_dict=1)
 
 	table_occupancy_percent = frappe.db.sql(f"""
@@ -56,7 +67,8 @@ def render():
 		IFNULL(SUM(si.total_qty), 0) as qty,
 		IFNULL(SUM(si.is_takeout), 0) as is_takeout
 		FROM `tabSales Invoice` si
-		WHERE si.docstatus=1;
+		WHERE si.docstatus=1
+		AND si.modified BETWEEN '{from_date}' AND '{to_date}'
 	;""", as_dict=1)
 
 # si.modified BETWEEN "{str(datetime.today()).split(' ')[0]} 00:00:01"
@@ -68,7 +80,7 @@ def render():
 		FROM `tabSales Invoice Item` i JOIN
 		`tabSales Invoice` s ON i.parent=s.name
 		WHERE s.modified BETWEEN
-		'2021-01-01 00:00:01' AND '2021-10-31 23:59:59'
+		'{from_date}' AND '{to_date}'
 		GROUP BY i.item_code ORDER BY qty DESC LIMIT 10;
 	;""", as_dict=1)
 
@@ -92,7 +104,8 @@ def render():
 		SELECT si.item_code, si.qty, si.amount, s.modified
 		FROM `tabSales Invoice Item` si
 		JOIN `tabSales Invoice` s ON si.parent=s.name
-		WHERE s.docstatus=1 ORDER BY si.item_code ASC;
+		WHERE s.modified BETWEEN '{from_date}' AND '{to_date}'
+		AND s.docstatus=1 ORDER BY si.item_code ASC;
 	;""", as_dict=1)
 
 	for i in SALESDATA:

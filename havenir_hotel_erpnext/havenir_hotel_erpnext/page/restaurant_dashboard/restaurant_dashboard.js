@@ -38,6 +38,21 @@ MyPage = Class.extend({
 		// push dom elemt to page
 	// HTML CONTENT
 	let body = `
+				<div class="row">
+					<div class="col-md-12">
+						<form class="form-inline" id="search_form">
+						  <div class="form-group mb-2">
+							<label for="from_date" class=""><b>From Date</b></label>
+							<input type="date" class="form-control" id="from_date" value="" name="from_date">
+						  </div>
+						  <div class="form-group mx-sm-3 mb-2">
+							<label for="to_date" class="">To Date</label>
+							<input type="date" class="form-control" id="to_date" name="to_date">
+						  </div>
+						  <button type="submit" class="btn btn-primary mb-2">Generate</button>
+						</form>
+					</div>
+				</div>
 				<div id="_content">
 
 				</div>
@@ -51,11 +66,31 @@ MyPage = Class.extend({
 
 		$(frappe.render_template(body, this)).appendTo(this.page.main);
 			// get data
-			this.get_data()
+			let get_data = this.get_data;
+			get_data({from_date:null, to_date:null});
+			// process form
+			  $("#search_form").submit(function (e) {
+			   e.preventDefault();
+			    var formData = {
+			      from_date: $("#from_date").val(),
+			      to_date: $("#to_date").val(),
+			    };
+				if(formData.from_date && formData.to_date){
+					get_data(formData);
+				} else if(new Date(formData.from_date) > new Date(formData.to_date)){
+					frappe.throw("From date cannot be greater than To date.");
+				} else {
+					frappe.throw("From and To date must be selected");
+					return;
+				}
+
+			  });
+
 	},
-	get_data: function(){
+	get_data: function(_dict){
 		frappe.call({
 				method: "havenir_hotel_erpnext.havenir_hotel_erpnext.page.restaurant_dashboard.restaurant_dashboard.render", //dotted path to server method
+				args: _dict,
 				callback: function(r) {
 						// code snippet
 						document.querySelector('#_content').innerHTML = r.message.template
@@ -63,6 +98,7 @@ MyPage = Class.extend({
 						google.charts.setOnLoadCallback(drawChart);
 						function drawChart() {
 							let datacolumn = [["Element", "Sold", { role: "bar" } ]];
+							console.log('top 10', r.message.top_10_today)
 							r.message.top_10_today.forEach((item, i) => {
 								datacolumn.push([item.item_code, item.qty, ''])
 							});
