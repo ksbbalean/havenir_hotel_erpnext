@@ -98,7 +98,6 @@ MyPage = Class.extend({
 						google.charts.setOnLoadCallback(drawChart);
 						function drawChart() {
 							let datacolumn = [["Element", "Sold", { role: "bar" } ]];
-							console.log('top 10', r.message.top_10_today)
 							r.message.top_10_today.forEach((item, i) => {
 								datacolumn.push([item.item_code, item.qty, ''])
 							});

@@ -5,27 +5,30 @@ frappe.ui.form.on('Restaurant Tables', {
 	refresh: function(frm) {
         // release table buttons
         // Custom buttons in groups
-        frm.add_custom_button('All Seats', () => {
-            frm.call('release_all');
-        }, 'Release Table');
+		if(frm.doc.occupied){
+			frm.add_custom_button('Release Table', () => {
+				frm.call('release_table');
+				frm.refresh()
+			});
+		}
 
-        frm.add_custom_button('Seat', () => {
-            new frappe.ui.form.MultiSelectDialog({
-                doctype: "Restaurant Table Seat",
-                target: frm,
-                setters: {
-                    table: frm.doc.name,
-                    status: 'Occupied'
-                },
-                action(selections) {
-                    selections.forEach((item, i) => {
-                        frm.call('release_seat', {seat:item});
-                    });
-                    frappe.msgprint(__("Seat(s) released."));
-
-                }
-                });
-        }, 'Release Table');
+        // frm.add_custom_button('Seat', () => {
+        //     new frappe.ui.form.MultiSelectDialog({
+        //         doctype: "Restaurant Table Seat",
+        //         target: frm,
+        //         setters: {
+        //             table: frm.doc.name,
+        //             status: 'Occupied'
+        //         },
+        //         action(selections) {
+        //             selections.forEach((item, i) => {
+        //                 frm.call('release_seat', {seat:item});
+        //             });
+        //             frappe.msgprint(__("Seat(s) released."));
+		//
+        //         }
+        //         });
+        // }, 'Release Table');
 
 	}
 });

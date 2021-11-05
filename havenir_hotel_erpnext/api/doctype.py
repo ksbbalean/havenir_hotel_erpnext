@@ -38,3 +38,27 @@ def get_table_seats_in_invoice(**kwargs):
 
     print(seats)
     return seats
+
+@frappe.whitelist()
+def setsi_table_filter(doctype, txt, searchfield, start, page_len, filters):
+    # filter restauarant table for invoice
+    print(doctype, txt, searchfield, start, page_len, filters)
+    occupied = filters.get('occupied')
+    docname = filters.get('docname')
+    doctype = filters.get('doctype')
+
+    query = frappe.db.sql(f"""
+        SELECT rt.name FROM `tabRestaurant Tables` rt
+        WHERE rt.party_name="{docname}" OR rt.occupied=0
+    ;""", as_list=1)
+    print(query)
+    return query
+    # (doctype,
+    #         filters={
+    #             'occupied': filters.get('occupied'),
+    #             'party'
+    #         },
+    #         fields=['name'],
+    #         order_by='name asc',
+    #         as_list=True
+    #     )

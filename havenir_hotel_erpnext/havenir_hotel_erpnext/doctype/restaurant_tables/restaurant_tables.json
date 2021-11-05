@@ -7,12 +7,16 @@
  "engine": "InnoDB",
  "field_order": [
   "table_number",
-  "capacity",
-  "installed_seats",
-  "column_break_4",
+  "section_break_2",
   "active",
+  "occupied",
+  "column_break_4",
+  "capacity",
   "section_break_6",
-  "seats"
+  "party",
+  "column_break_10",
+  "party_name",
+  "section_break_12"
  ],
  "fields": [
   {
@@ -21,7 +25,6 @@
    "fieldtype": "Data",
    "ignore_user_permissions": 1,
    "in_filter": 1,
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Table Number",
    "reqd": 1,
@@ -41,29 +44,49 @@
    "label": "Active"
   },
   {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
    "default": "0",
-   "fieldname": "installed_seats",
-   "fieldtype": "Int",
-   "label": "Installed Seats",
-   "read_only": 1
+   "fieldname": "occupied",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Occupied"
   },
   {
    "fieldname": "column_break_4",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "seats",
-   "fieldtype": "Table",
-   "label": "Seats",
-   "options": "Restaurant Table Seat Detail"
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
   },
   {
-   "fieldname": "section_break_6",
+   "fieldname": "party",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Party",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "party_name",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Party Name",
+   "options": "party"
+  },
+  {
+   "fieldname": "section_break_12",
    "fieldtype": "Section Break"
   }
  ],
  "links": [],
- "modified": "2021-10-28 06:40:11.963101",
+ "modified": "2021-11-06 04:54:24.364482",
  "modified_by": "Administrator",
  "module": "Havenir Hotel Erpnext",
  "name": "Restaurant Tables",
