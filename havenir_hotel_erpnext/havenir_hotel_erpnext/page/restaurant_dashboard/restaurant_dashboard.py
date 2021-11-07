@@ -43,11 +43,11 @@ def render(**kwargs):
 
 	table_occupancy_percent = frappe.db.sql(f"""
 		SELECT IFNULL(COUNT(r.name), 0) as count
-		FROM `tabRestaurant Table Seat` r
-		WHERE r.status="Occupied"
+		FROM `tabRestaurant Tables` r
+		WHERE r.occupied=1
 		UNION
 		SELECT IFNULL(COUNT(r.name), 0) as count
-		FROM `tabRestaurant Table Seat` r;
+		FROM `tabRestaurant Tables` r;
 	;""", as_dict=1)
 	t_occupancy_percent = 0
 	t_free_percent = 0
@@ -57,8 +57,8 @@ def render(**kwargs):
 		if(not t_total):
 			pass
 		else:
-			t_occupancy_percent = t_occupied/t_total
-			t_free_percent = 1-t_occupancy_percent
+			t_occupancy_percent = t_occupied
+			t_free_percent = t_total - t_occupied
 	except Exception as e:
 		pass
 
