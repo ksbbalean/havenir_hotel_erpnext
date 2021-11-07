@@ -19,7 +19,7 @@ class RestaurantTables(Document):
 	def release_table(self):
 		self.occupied = 0
 		self.save()
-		frappe.msgprint(_("Table released."));
+		# frappe.msgprint(_("Table released."));
 		# update seat installed
 		# seats = 0
 		# selected_seats = [seat.seat for seat in self.seats]

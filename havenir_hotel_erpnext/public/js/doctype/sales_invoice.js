@@ -3,46 +3,28 @@ frappe.ui.form.on('Sales Invoice', {
 		// filter restaurant table
 		set_table_filter(frm);
 		// your code here
-        // if(!frm.is_new()){
-        //     frm.add_custom_button('All Seats', () => {
-        //         frappe.call({
-        //             method: "havenir_hotel_erpnext.events.sales_invoice.release_all", //dotted path to server method
-        //             args:{table:frm.doc.table},
-        //             callback: function(r) {
-        //                 // code snippet
-		//
-        //             }
-        //         })
-        //     }, 'Release Table');
-		//
-        //     frm.add_custom_button('Seat', () => {
-        //         new frappe.ui.form.MultiSelectDialog({
-        //             doctype: "Restaurant Table Seat",
-        //             target: frm,
-        //             setters: {
-        //                 status: 'Occupied',
-        //                 party: frm.doc.doctype,
-        //                 party_name: frm.doc.name
-        //             },
-        //             action(selections) {
-        //                 selections.forEach((item, i) => {
-        //                     frappe.call({
-        //                         method: "havenir_hotel_erpnext.events.sales_invoice.release_seat", //dotted path to server method
-        //                         args:{seat:item},
-        //                         callback: function(r) {
-        //                             // code snippet
-        //                             frappe.msgprint(__(`Seat ${item} released.`));
-		//
-        //                         }
-        //                     })
-        //                 });
-		//
-		//
-        //             }
-        //             });
-        //     }, 'Release Table');
-        // }
+	},
+	split_bill_by(frm) {
+		if(frm.doc.split_bill_by && (frm.doc.items.length>0)){
+			if(frm.doc.split_bill_by=='Table' && frm.doc.restaurant_tables.length>0){
+				frm.set_value('bill_per_table', frm.doc.grand_total/frm.doc.restaurant_tables.length);
+			} else if(frm.doc.split_bill_by!='Table'){
 
+			} else {
+				frappe.throw(__("Please select restaurant tables first."));
+				frm.set_value('bill_per_table', 0.00);
+			}
+		} else {
+			frm.set_value('bill_per_table', '');
+			frappe.throw(__("Please select items first."));
+		}
+	},
+	how_many_individuals(frm){
+		if(frm.doc.how_many_individuals>0){
+			frm.set_value('bill_per_individual', frm.doc.grand_total/frm.doc.how_many_individuals);
+		} else {
+			frm.set_value('bill_per_individual', 0.00);
+		}
 	}
 })
 
@@ -61,8 +43,11 @@ frappe.ui.form.on('SI Restaurant Table Detail', {
                 frappe.throw(__(`${table} already exists in row ${item.idx}`));
             }
         });
-
-    }
+		calculate_table_bill(frm);
+    },
+	restaurant_tables_remove: (frm, cdt, cdn)=>{
+		calculate_table_bill(frm);
+	}
 })
 
 
@@ -80,34 +65,12 @@ let set_table_filter = (frm)=>{
 }
 
 
-// methods
-// let update_table_seats = (frm)=>{
-//         // initialize table
-//         if (frm.doc.full_capacity) {
-//             frappe.call({
-//                 method: "havenir_hotel_erpnext.api.doctype.get_tableinvoice_seats", //dotted path to server method
-//                 args:{table:frm.doc.table,
-//                         party:frm.doc.doctype,
-//                         party_name:frm.doc.name},
-//                 callback: function(r) {
-//                     // code snippet
-//                     if(r.message){
-//                         let d = r.message;
-//                         frm.doc.restaurant_table_seat = [];
-//                         d.forEach((item, i) => {
-//                             frm.add_child('restaurant_table_seat', {
-//                                 seat:item.name
-//                             })
-//                         });
-//                         frm.refresh_field('restaurant_table_seat');
-//
-//                     } else {
-//                         frappe.throw("No seats assigned to table.")
-//                     }
-//                 }
-//             })
-//         } else {
-//         frm.set_value('full_capacity', '');
-//         frappe.throw(__("Please select table."));
-//     }
-// }
+let calculate_table_bill = (frm)=>{
+	if(frm.doc.split_bill_by=='Table'){
+		if(frm.doc.restaurant_tables.length>0){
+			frm.set_value('bill_per_table', frm.doc.grand_total/frm.doc.restaurant_tables.length);
+		} else {
+			frm.set_value('bill_per_table', 0.00);
+		}
+	}
+}
