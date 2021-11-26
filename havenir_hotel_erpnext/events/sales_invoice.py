@@ -40,6 +40,20 @@ def validate(doc, event):
                     <a href='/app/{table_doc.party.replace(' ', '-').lower()
                     }/{table_doc.party_name}'>{table_doc.party_name}</a></b> \
                     Please release table first before reassignment"""))
+    
+    if doc.split_bill_by and len(doc.items) > 0 and doc.grand_total > 0:
+        if doc.split_bill_by=='Table' and doc.restaurant_tables.length > 0:
+            doc.bill_per_table = doc.grand_total / len(doc.restaurant_tables)
+        else:
+            doc.bill_per_table = 0
+    else:
+        doc.bill_per_table = 0
+    
+    if doc.how_many_individuals and int(doc.how_many_individuals) > 0 and doc.grand_total > 0:
+        doc.bill_per_individual = doc.grand_total / int(doc.how_many_individuals)
+    else:
+        doc.bill_per_individual = 0
+
 
 
     # frappe.db.commit()
